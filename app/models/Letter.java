@@ -1,9 +1,9 @@
 package models;
 
 public class Letter{
-    char letter = '0'; //This will always be lowercase
-    int numEquiv = 0; //This will be 1,2,3 etc.
-    boolean[] baconNum = new boolean[5];
+    private char letter = '0'; //This will always be lowercase
+    private int numEquiv = 0; //This will be 1,2,3 etc.
+    private boolean[] baconNum = new boolean[5];
 
     public Letter(String letter){
         this.letter = letter.charAt(0);
@@ -20,7 +20,25 @@ public class Letter{
         setLetter();
         setBaconNum();
     }
-    public Letter(){
+    public Letter(boolean[] baconNum){
+        this.baconNum = baconNum;
+        int num = 0;
+
+        if(baconNum[4])
+            num += 1;
+        if(baconNum[3])
+            num += 2;
+        if(baconNum[2])
+            num += 4;
+        if(baconNum[1])
+            num += 8;
+        if(baconNum[0])
+            num += 16;
+
+        numEquiv = num + 1;
+        setLetter();
+    }
+    public Letter(){ //Initializes a random letter
         numEquiv = (int)(26 * Math.random()) + 1;
         setLetter();
         setBaconNum();
@@ -69,11 +87,15 @@ public class Letter{
         return numEquiv;
     }
 
+
     public void shiftLetter(char shifter){
         int numShifter = (int)Character.toLowerCase(letter);
         int newNum = numEquiv + numShifter;
         if(newNum > 26){
             newNum -=26;
+        }
+        if(newNum < 1){
+            newNum += 26;
         }
         setLetter();
         setBaconNum();
@@ -83,9 +105,10 @@ public class Letter{
         if(newNum > 26){
             newNum -=26;
         }
+        if(newNum < 1){
+            newNum += 26;
+        }
         setLetter();
         setBaconNum();
     }
-
-
 }
