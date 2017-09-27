@@ -2,7 +2,7 @@ package models;
 
 public class Letter{
     private char letter = '0'; //This will always be lowercase
-    private int numEquiv = 0; //This will be 1,2,3 etc.
+    private int numEquiv = 0; //This will be 1,2,3 etc. (a = 1)
     private boolean[] baconNum = new boolean[5];
 
     public Letter(String letter){
