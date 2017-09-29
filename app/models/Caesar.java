@@ -24,7 +24,6 @@ public class Caesar{
     }
 
     private void setEncryptedMessage(){
-        System.out.println("Tried to Encrypt");
         for(int count = 0; count<originalMessage.length(); count++){
             Letter l =  new Letter(originalMessage.charAt(count));
             if(l.isLetter()){

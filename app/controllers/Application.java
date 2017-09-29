@@ -12,8 +12,8 @@ import models.Caesar;
 public class Application extends Controller {
 
     public static void index() {
-        Caesar c = new Caesar("Hello World", 25);
-        System.out.println(c.getEncryptedMessage());
+        Vignere v = new Vignere("Hello World", "aabbc");
+        System.out.println(v.getEncryptedMessage());
         render();
     }
 
