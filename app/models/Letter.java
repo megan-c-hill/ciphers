@@ -52,7 +52,7 @@ public class Letter{
 
     }
     private void setLetter(){
-        letter = (char)numEquiv;
+        letter = (char)(numEquiv + 95);
         letter = Character.toLowerCase(letter);
     }
     private void setBaconNum(){
@@ -88,8 +88,9 @@ public class Letter{
     }
 
 
-    public void shiftLetter(char shifter){
-        int numShifter = (int)Character.toLowerCase(letter);
+    public char shiftLetter(char shifter){
+        int numShifter = (int)Character.toLowerCase(shifter);
+        numShifter -= 97;
         int newNum = numEquiv + numShifter;
         if(newNum > 26){
             newNum -=26;
@@ -97,10 +98,9 @@ public class Letter{
         if(newNum < 1){
             newNum += 26;
         }
-        setLetter();
-        setBaconNum();
+        return (char)(newNum + 96);
     }
-    public void shiftLetter(int shifter){
+    public char shiftLetter(int shifter){
         int newNum = numEquiv + shifter;
         if(newNum > 26){
             newNum -=26;
@@ -108,7 +108,13 @@ public class Letter{
         if(newNum < 1){
             newNum += 26;
         }
-        setLetter();
-        setBaconNum();
+        return (char)(newNum+96);
+    }
+
+    public boolean isSpace(){
+        return Character.isSpace(letter);
+    }
+    public boolean isLetter(){
+        return Character.isLetter(letter);
     }
 }

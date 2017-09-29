@@ -7,12 +7,13 @@ import java.util.*;
 
 import models.*;
 import models.Letter;
+import models.Caesar;
 
 public class Application extends Controller {
 
     public static void index() {
-        Letter A = new Letter(65);
-        Letter a = new Letter(97);
+        Caesar c = new Caesar("Hello World", 25);
+        System.out.println(c.getEncryptedMessage());
         render();
     }
 
