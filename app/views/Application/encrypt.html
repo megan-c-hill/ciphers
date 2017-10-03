@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Results</title>
+    <title>Start</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../public/stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -30,17 +30,35 @@
 </head>
 <body>
     <h3 style = "margin: 5px">Input something here and then select your cipher</h3>
+    <form id = "caesarForm" action = "/caesar">
+        <div class = "row" style = "margin: 10px">
+            <p>Message:</p>
+            <Input style = "width: 500px" type = "text" name = "message" onblur = "document.vignereForm.message.value = this.value">
+        </div>
+        <div class = "row" style = "margin: 10px">
+            <p>Key: </p>
+            <Input  style = "width: 500px" type = "text" name = "key"onblur = "document.vignereForm.key.value = this.value">
+        </div>
+    </form>
+    <form id = "vignereForm" name = "vignereForm" action = "/vignere">
+        <input class = "hidden" type = "text" name = "message">
+        <input class = "hidden" type = "text" name = "key">
+    </form>
     <div class = "row" style = "margin: 10px">
-        <p>Message:</p>
-        <Input style = "width: 500px" type = "text" name = "Message">
+        <button id = "caesarButton" type = "button" class = "btn btn-primary">Caesar</button>
+        <button id = "vignereButton" type = "button" class = "btn btn-primary">Vignere</button>
     </div>
-    <div class = "row" style = "margin: 10px">
-        <p>Key: </p>
-        <Input  style = "width: 500px" type = "text" name = "key">
-    </div>
-    <div class = "row" style = "margin: 10px">
-        <button type = "button" class = "btn btn-primary">Caesar</button>
-        <button type = "button" class = "btn btn-primary">Vignere</button>
-    </div>
+    <script>
+        document.getElementById("caesarButton").addEventListener("click", caesar);
+        document.getElementById("vignereButton").addEventListener("click", vignere);
+
+        function caesar(){
+            document.getElementById("caesarForm").submit();
+        }
+        function vignere(){
+            document.getElementById("vignereForm").submit();
+        }
+
+    </script>
 </body>
 </html>

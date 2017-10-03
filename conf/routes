@@ -5,6 +5,8 @@
 # Home page
 GET     /                                       Application.index
 GET     /encrypt                                Application.encrypt
+GET     /caesar                                 Application.caesar
+GET     /vignere                                Application.vignere
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -21,4 +21,12 @@ public class Application extends Controller {
         render();
     }
 
+    public static void vignere(String message, String key){
+        render(message, key);
+    }
+
+    public static void caesar(String message, String key){
+        render(message, key);
+    }
+
 }
