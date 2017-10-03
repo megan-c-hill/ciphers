@@ -33,6 +33,12 @@ public class Vignere{
         }
     }
 
+    public String getOriginalMessage(){
+        return originalMessage;
+    }
+    public String getKey(){
+        return key;
+    }
     public String getEncryptedMessage(){
         return encryptedMessage;
     }

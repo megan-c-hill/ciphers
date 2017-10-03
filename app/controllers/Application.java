@@ -12,8 +12,6 @@ import models.Caesar;
 public class Application extends Controller {
 
     public static void index() {
-        Vignere v = new Vignere("Hello World", "aabbc");
-        System.out.println(v.getEncryptedMessage());
         render();
     }
 
@@ -21,12 +19,15 @@ public class Application extends Controller {
         render();
     }
 
-    public static void vignere(String message, String key){
-        render(message, key);
+    public static void caesar(String message, String key){
+        Caesar cipher = new Caesar(message, key);
+        render(cipher);
     }
 
-    public static void caesar(String message, String key){
-        render(message, key);
+    public static void vignere(String message, String key){
+        Vignere cipher = new Vignere(message, key);
+        render(cipher);
     }
+
 
 }
