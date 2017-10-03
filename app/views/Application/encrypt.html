@@ -26,9 +26,21 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body>
-Get Ready to Cipher some stuff!
-<button type = "button" class = "btn btn-lg btn-success">GO!</button>
+    <h3 style = "margin: 5px">Input something here and then select your cipher</h3>
+    <div class = "row" style = "margin: 10px">
+        <p>Message:</p>
+        <Input style = "width: 500px" type = "text" name = "Message">
+    </div>
+    <div class = "row" style = "margin: 10px">
+        <p>Key: </p>
+        <Input  style = "width: 500px" type = "text" name = "key">
+    </div>
+    <div class = "row" style = "margin: 10px">
+        <button type = "button" class = "btn btn-primary">Caesar</button>
+        <button type = "button" class = "btn btn-primary">Vignere</button>
+    </div>
 </body>
 </html>
