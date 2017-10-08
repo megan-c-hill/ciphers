@@ -19,15 +19,32 @@ public class Application extends Controller {
         render();
     }
 
-    public static void caesar(String message, String key){
-        Caesar cipher = new Caesar(message, key);
+    public static void caesar(String message, String key, String decipher){
+        if(decipher == null){
+            decipher = "true";
+        }
+        Caesar cipher = new Caesar();
+        if(decipher.equals("true")){
+            cipher = new Caesar(message, key, true);
+        }
+        else{
+            cipher = new Caesar(message, key, false);
+        }
         render(cipher);
     }
 
-    public static void vignere(String message, String key){
-        Vignere cipher = new Vignere(message, key);
+    public static void vignere(String message, String key, String decipher){
+        Vignere cipher = new Vignere();
+        if(decipher.equals("true")){
+            cipher = new Vignere(message, key, true);
+        }
+        else{
+            cipher = new Vignere(message, key, false);
+        }
         render(cipher);
     }
 
-
+    public static void decipher(){
+        render();
+    }
 }

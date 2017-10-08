@@ -4,11 +4,18 @@ public class Vignere{
     private String originalMessage = "";
     private String encryptedMessage = "";
     private String key = "";
+    private boolean decipher = false;
 
-    public Vignere(String originalMessage, String key){
+    public Vignere(String originalMessage, String key, boolean decipher){
         this.originalMessage = originalMessage;
         this.key = key;
+        this.decipher = decipher;
         setEncryptedMessage();
+    }
+    public Vignere(){
+        this.originalMessage = "";
+        this.key = "";
+        this.decipher = false;
     }
 
     private void setEncryptedMessage(){

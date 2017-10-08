@@ -7,6 +7,7 @@ GET     /                                       Application.index
 GET     /encrypt                                Application.encrypt
 GET     /caesar                                 Application.caesar
 GET     /vignere                                Application.vignere
+GET     /decipher                               Application.decipher
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

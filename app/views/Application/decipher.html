@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Start</title>
+    <title>Decipher</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../public/stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -29,28 +29,28 @@
 
 </head>
 <body>
-    <h3 style = "margin: 5px">Input something here and then select your cipher</h3>
-    <form id = "caesarForm" action = "/caesar">
-        <div class = "row" style = "margin: 10px">
-            <p>Message:</p>
-            <Input style = "width: 500px" type = "text" name = "message" onblur = "document.vignereForm.message.value = this.value">
-        </div>
-        <div class = "row" style = "margin: 10px">
-            <p>Key: </p>
-            <Input  style = "width: 500px" type = "text" name = "key" onblur = "document.vignereForm.key.value = this.value">
-            <input class = "hidden" type = "text" name = "decipher" value = "false" onblur = "document.vignereFrom.decipher.value = this.value">
-        </div>
-    </form>
-    <form id = "vignereForm" name = "vignereForm" action = "/vignere">
-        <input class = "hidden" type = "text" name = "message">
-        <input class = "hidden" type = "text" name = "key">
-        <input class = "hidden" type = "text" name = "decipher">
-    </form>
+<h3 style = "margin: 5px">Input something to be deciphered and then select your cipher</h3>
+<form id = "caesarForm" action = "/caesar">
     <div class = "row" style = "margin: 10px">
-        <button id = "caesarButton" type = "button" class = "btn btn-primary">Caesar</button>
-        <button id = "vignereButton" type = "button" class = "btn btn-primary">Vignere</button>
+        <p>Message:</p>
+        <Input style = "width: 500px" type = "text" name = "message" onblur = "document.vignereForm.message.value = this.value">
     </div>
-    <script>
+    <div class = "row" style = "margin: 10px">
+        <p>Key: </p>
+        <Input  style = "width: 500px" type = "text" name = "key" onblur = "document.vignereForm.key.value = this.value">
+        <input class = "hidden" type = "text" name = "decipher" value = "true" onblur = "document.vignereForm.decipher.value = this.value">
+    </div>
+</form>
+<form id = "vignereForm" name = "vignereForm" action = "/vignere">
+    <input class = "hidden" type = "text" name = "message">
+    <input class = "hidden" type = "text" name = "key">
+    <input class = "hidden" type = "text" name = "decipher">
+</form>
+<div class = "row" style = "margin: 10px">
+    <button id = "caesarButton" type = "button" class = "btn btn-primary">Caesar</button>
+    <button id = "vignereButton" type = "button" class = "btn btn-primary">Vignere</button>
+</div>
+<script>
         document.getElementById("caesarButton").addEventListener("click", caesar);
         document.getElementById("vignereButton").addEventListener("click", vignere);
 

@@ -2,7 +2,7 @@ package models;
 
 public class Letter{
     private char letter = '0'; //This will always be lowercase
-    private int numEquiv = 0; //This will be 1,2,3 etc. (a = 1)
+    private int numEquiv = 0; //Corresponds to ASCII
     private boolean[] baconNum = new boolean[5];
 
     public Letter(String letter){
@@ -16,10 +16,17 @@ public class Letter{
         setBaconNum();
     }
     public Letter(int numEquiv){
+        if (numEquiv < 91 && numEquiv > 40){
+            numEquiv += 32;
+        }
+        if(numEquiv < 27 && numEquiv > 0){
+            numEquiv += 96;
+        }
         this.numEquiv = numEquiv;
         setLetter();
         setBaconNum();
     }
+
     public Letter(boolean[] baconNum){
         this.baconNum = baconNum;
         int num = 0;
@@ -34,12 +41,12 @@ public class Letter{
             num += 8;
         if(baconNum[0])
             num += 16;
-
-        numEquiv = num + 1;
+        numEquiv = num + 97;
         setLetter();
     }
+
     public Letter(){ //Initializes a random letter
-        numEquiv = (int)(26 * Math.random()) + 1;
+        numEquiv = (int)(26 * Math.random()) + 97;
         setLetter();
         setBaconNum();
     }
@@ -48,15 +55,14 @@ public class Letter{
     private void setNum(){
         letter = Character.toLowerCase(letter);
         numEquiv = (int)letter;
-        numEquiv -= 96;
 
     }
     private void setLetter(){
-        letter = (char)(numEquiv + 95);
-        letter = Character.toLowerCase(letter);
+        letter = (char)(numEquiv);
+        letter = Character.toLowerCase(letter); // This shouldn't be necessary but I'm leaving it as safety
     }
     private void setBaconNum(){
-        int tempNum = numEquiv - 1; //temp num is assuming a = 0
+        int tempNum = numEquiv - 97; //temp num is assuming a = 0
         if(tempNum % 2 == 0)
             baconNum[4] = false;
         else
@@ -91,24 +97,30 @@ public class Letter{
     public char shiftLetter(char shifter){
         int numShifter = (int)Character.toLowerCase(shifter);
         numShifter -= 97;
+        System.out.println("shifting by char");
         int newNum = numEquiv + numShifter;
-        if(newNum > 26){
+        if(newNum > 122){
             newNum -=26;
         }
-        if(newNum < 1){
+        if(newNum < 97){
             newNum += 26;
         }
         return (char)(newNum + 96);
     }
     public char shiftLetter(int shifter){
-        int newNum = numEquiv + shifter;
-        if(newNum > 26){
+        System.out.println(shifter);
+        int newNum;
+        if(shifter > 0)
+            newNum = numEquiv + shifter - 97;
+        else
+            newNum = numEquiv + shifter + 97;
+        if(newNum > 122){
             newNum -=26;
         }
-        if(newNum < 1){
+        if(newNum < 97){
             newNum += 26;
         }
-        return (char)(newNum+96);
+        return (char)(newNum);
     }
 
     public boolean isSpace(){
