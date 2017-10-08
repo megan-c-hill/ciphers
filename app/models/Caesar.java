@@ -13,7 +13,7 @@ public class Caesar{
         this.key = key;
         this.decipher = decipher;
         Letter l = new Letter(key);
-        this.numKey = l.getLetter();
+        this.numKey = l.getNumEquiv();
         setEncryptedMessageByNum();
     }
     public Caesar(String originalMessage, String key, boolean decipher){
@@ -21,13 +21,7 @@ public class Caesar{
         this.key = key.charAt(0);
         this.decipher = decipher;
         Letter l = new Letter(key);
-        this.numKey = l.getLetter();
-        setEncryptedMessageByNum();
-    }
-    public Caesar(String originalMessage, int numKey, boolean decipher){
-        this.originalMessage = originalMessage;
-        this.numKey = numKey;
-        this.decipher = decipher;
+        this.numKey = l.getNumEquiv();
         setEncryptedMessageByNum();
     }
     public Caesar(){
@@ -37,18 +31,6 @@ public class Caesar{
         setEncryptedMessageByNum();
     }
 
-    private void setEncryptedMessage(){
-        for(int count = 0; count<originalMessage.length(); count++){
-            Letter l =  new Letter(originalMessage.charAt(count));
-            if(l.isLetter()){
-                char newLetter = l.shiftLetter(key);
-                encryptedMessage += newLetter;
-            }
-            else{
-                encryptedMessage += l.getLetter();
-            }
-        }
-    }
     private void setEncryptedMessageByNum(){
         for(int count = 0; count<originalMessage.length(); count++){
             Letter l = new Letter(originalMessage.charAt(count));

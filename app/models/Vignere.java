@@ -4,7 +4,7 @@ public class Vignere{
     private String originalMessage = "";
     private String encryptedMessage = "";
     private String key = "";
-    private boolean decipher = false;
+    private boolean decipher;
 
     public Vignere(String originalMessage, String key, boolean decipher){
         this.originalMessage = originalMessage;
@@ -22,9 +22,18 @@ public class Vignere{
         int keyCount = 0;
         for(int count = 0; count<originalMessage.length(); count++){
             char thisKey = key.charAt(keyCount);
-            Letter l =  new Letter(originalMessage.charAt(count));
-            if(l.isLetter()){
-                char newLetter = l.shiftLetter(thisKey);
+            Letter messageLetter =  new Letter(originalMessage.charAt(count));
+            if(messageLetter.isLetter()){
+                Letter keyLetter = new Letter(thisKey);
+                int numKey = keyLetter.getLetter();
+                char newLetter;
+                if(decipher){
+                    newLetter = messageLetter.shiftLetter(numKey * -1);
+                }
+                else {
+                    newLetter = messageLetter.shiftLetter(numKey);
+                }
+
                 encryptedMessage += newLetter;
 
                 if(keyCount < key.length()-1){
@@ -35,7 +44,7 @@ public class Vignere{
                 }
             }
             else{
-                encryptedMessage += l.getLetter();
+                encryptedMessage += messageLetter.getLetter();
             }
         }
     }
