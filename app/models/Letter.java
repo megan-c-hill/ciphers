@@ -97,7 +97,6 @@ public class Letter{
     public char shiftLetter(char shifter){
         int numShifter = (int)Character.toLowerCase(shifter);
         numShifter -= 97;
-        System.out.println("shifting by char");
         int newNum = numEquiv + numShifter;
         if(newNum > 122){
             newNum -=26;
@@ -108,7 +107,6 @@ public class Letter{
         return (char)(newNum + 96);
     }
     public char shiftLetter(int shifter){
-        System.out.println(shifter);
         int newNum;
         if(shifter > 0)
             newNum = numEquiv + shifter - 97;
