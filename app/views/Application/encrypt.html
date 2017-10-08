@@ -50,6 +50,9 @@
         <button id = "caesarButton" type = "button" class = "btn btn-primary">Caesar</button>
         <button id = "vignereButton" type = "button" class = "btn btn-primary">Vignere</button>
     </div>
+    <div class = "row" style = "margin: 10px">
+        <a href = "/decipher"><button type = "button" class = "btn btn-info">To Decipher Page</button></a>
+    </div>
     <script>
         document.getElementById("caesarButton").addEventListener("click", caesar);
         document.getElementById("vignereButton").addEventListener("click", vignere);
@@ -60,7 +63,6 @@
         function vignere(){
             document.getElementById("vignereForm").submit();
         }
-
     </script>
 </body>
 </html>
