@@ -1,0 +1,5 @@
+10 Oct 2017 15:39:40,312 INFO  ~ Starting /Users/megansISU/Desktop/MyProjects/ciphers
+10 Oct 2017 15:39:41,135 WARN  ~ You're running Play! in DEV mode
+10 Oct 2017 15:39:41,218 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+10 Oct 2017 15:39:52,531 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0 for default
+10 Oct 2017 15:39:53,123 INFO  ~ Application 'Ciphers' is now started !
