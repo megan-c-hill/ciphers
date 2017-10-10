@@ -31,8 +31,16 @@
 <body>
 <h1>Bacon</h1>
 <p>Original Message: ${cipher.getOriginalMessage()}</p>
-<p>Pattern: ${cipher.getPattern()}</p>
-<p>Random Text: ${cipher.getRandomText()}</p>
+<p>New Message:
+#{list items: cipher.getNumbers(), as: 'number'}
+    #{if cipher.getPattern(number) == "1"}
+        <b>${cipher.getRandomText(number)}</b>
+    #{/if}
+    #{else}
+        <i>${cipher.getRandomText(number)}</i>
+    #{/else}
+#{/list}
+</p>
 <div class = "row" style = "margin: 10px">
     <a href = "/encrypt"><button type = "button" class = "btn btn-info">New Encryption</button></a>
     <a href = "/decipher"><button type = "button" class = "btn btn-info">New Decipher</button></a>
