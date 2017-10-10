@@ -92,6 +92,9 @@ public class Letter{
     public int getNumEquiv(){
         return numEquiv;
     }
+    public boolean[] getBaconNum(){
+        return baconNum;
+    }
 
     public char shiftLetter(int shifter){
         int newNum;

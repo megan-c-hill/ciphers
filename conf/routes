@@ -5,9 +5,10 @@
 # Home page
 GET     /                                       Application.index
 GET     /encrypt                                Application.encrypt
+GET     /decipher                               Application.decipher
 GET     /caesar                                 Application.caesar
 GET     /vignere                                Application.vignere
-GET     /decipher                               Application.decipher
+GET     /bacon                                  Application.bacon
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

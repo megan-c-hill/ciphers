@@ -44,6 +44,11 @@ public class Application extends Controller {
         render(cipher);
     }
 
+    public static void bacon(String message){
+        Bacon cipher = new Bacon(message);
+        render (cipher);
+    }
+
     public static void decipher(){
         render();
     }

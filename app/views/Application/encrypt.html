@@ -41,14 +41,20 @@
             <input class = "hidden" type = "text" name = "decipher" value = "false" onblur = "document.vignereFrom.decipher.value = this.value">
         </div>
     </form>
+
     <form id = "vignereForm" name = "vignereForm" action = "/vignere">
         <input class = "hidden" type = "text" name = "message">
         <input class = "hidden" type = "text" name = "key">
         <input class = "hidden" type = "text" name = "decipher">
     </form>
+
+    <form id = "baconForm" name="baconForm" action = "/bacon">
+        <input class = "hidden" type = "text" name = "message">
+    </form>
     <div class = "row" style = "margin: 10px">
         <button id = "caesarButton" type = "button" class = "btn btn-primary">Caesar</button>
         <button id = "vignereButton" type = "button" class = "btn btn-primary">Vignere</button>
+        <button id = "baconButton" type = "button" class = "btn btn-primary">Bacon</button>
     </div>
     <div class = "row" style = "margin: 10px">
         <a href = "/decipher"><button type = "button" class = "btn btn-info">To Decipher Page</button></a>
@@ -56,12 +62,17 @@
     <script>
         document.getElementById("caesarButton").addEventListener("click", caesar);
         document.getElementById("vignereButton").addEventListener("click", vignere);
+        document.getElementById("baconButton").addEventListener("click", bacon);
 
         function caesar(){
             document.getElementById("caesarForm").submit();
         }
         function vignere(){
             document.getElementById("vignereForm").submit();
+        }
+        function bacon(){
+            document.getElementById("baconForm").message.value = document.getElementById("caesarForm").message.value;
+            document.getElementById("baconForm").submit();
         }
     </script>
 </body>
