@@ -153,6 +153,134 @@ public class Morse{
     }
 
     private void setPlainLetter(){
+        switch(morseLetter){
+            case ".":
+                plainLetter = 'e';
+                break;
+            case "-":
+                plainLetter = 't';
+                break;
+            case "..":
+                plainLetter = 'i';
+                break;
+            case ".-":
+                plainLetter = 'a';
+                break;
+            case "-.":
+                plainLetter = 'n';
+                break;
+            case "--":
+                plainLetter = 'm';
+                break;
+            case "-..":
+                plainLetter = 'd';
+                break;
+            case "--.":
+                plainLetter = 'g';
+                break;
+            case "-.-":
+                plainLetter = 'k';
+                break;
+            case "---":
+                plainLetter = 'o';
+                break;
+            case ".-.":
+                plainLetter = 'r';
+                break;
+            case "...":
+                plainLetter = 's';
+                break;
+            case "..-":
+                plainLetter = 'u';
+                break;
+            case ".--":
+                plainLetter = 'w';
+                break;
+            case "-...":
+                plainLetter = 'b';
+                break;
+            case "-.-.":
+                plainLetter = 'c';
+                break;
+            case "..-.":
+                plainLetter = 'f';
+                break;
+            case "....":
+                plainLetter = 'h';
+                break;
+            case ".---":
+                plainLetter = 'j';
+                break;
+            case ".-..":
+                plainLetter = 'l';
+                break;
+            case ".--.":
+                plainLetter = 'p';
+                break;
+            case "--.-":
+                plainLetter = 'q';
+                break;
+            case "...-":
+                plainLetter = 'v';
+                break;
+            case "-..-":
+                plainLetter = 'x';
+                break;
+            case "-.--":
+                plainLetter = 'y';
+                break;
+            case "--..":
+                plainLetter = 'z';
+                break;
+            case ".-.-.-":
+                plainLetter = '.';
+                break;
+            case "--..-":
+                plainLetter = ',';
+                break;
+            case "..--..":
+                plainLetter = '?';
+                break;
+            case "-..-.":
+                plainLetter = '/';
+                break;
+            case ".--.-.":
+                plainLetter = '@';
+                break;
+            case ".----":
+                plainLetter = '1';
+                break;
+            case "..---":
+                plainLetter = '2';
+                break;
+            case "...--":
+                plainLetter = '3';
+                break;
+            case "....-":
+                plainLetter = '4';
+                break;
+            case ".....":
+                plainLetter = '5';
+                break;
+            case "-....":
+                plainLetter = '6';
+                break;
+            case "--...":
+                plainLetter = '7';
+                break;
+            case "---..":
+                plainLetter = '8';
+                break;
+            case "----.":
+                plainLetter = '9';
+                break;
+            case "-----":
+                plainLetter = '0';
+                break;
+            default:
+                plainLetter = '*';
+                break;
+        }
 
     }
 
